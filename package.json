@@ -1,0 +1,16 @@
+{
+  "name": "pointer",
+  "version": "0.1.0",
+  "description": "Use your mobile phone as a pointing device during web presentations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mobile",
+    "pointing",
+    "device"
+  ],
+  "author": "Mattias Wallander",
+  "license": "GPL-3.0"
+}
