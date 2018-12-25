@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "Presenter",
+  "version": "0.1.0",
+  "description": "Use your mobile phone as a pointing device during web presentations.",
+  "author": "Mattias Wallander <mattias@wallander.eu>",
+  "applications": {
+    "gecko": {
+      "id": "presenter@wallander.eu"
+    }
+  },
+  "permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "/components/receiver.js",
+    "/components/receiver.css"
+  ],
+  "page_action": {
+    "default_title": "Presenter"
+  }
+}

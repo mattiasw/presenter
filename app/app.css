@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    animation: searching 500ms infinite alternate;
+    background: #000;
+    color: #888;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    width: 100vw;
+}
+
+@keyframes searching {
+    to {
+        opacity: .5;
+    }
+}
+
+.presenter-offline body {
+    animation: none;
+    opacity: .5;
+}
+
+.presenter-online body {
+    animation: none;
+    color: #7df9ff;
+}
+
+label,
+button {
+    display: block;
+}
+
+textarea {
+    height: 250px;
+    max-width: 100%;
+    width: 400px;
+}
+
+.button {
+    background: transparent;
+    border: solid currentColor;
+    color: inherit;
+    cursor: pointer;
+    filter: drop-shadow(0 0 5px currentColor);
+    padding: 0;
+    position: absolute;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.button:active {
+    color: inherit;
+}
+
+.presenter-online .pointer-button--pressed,
+.presenter-online .calibration-button--pressed {
+    color: #ff4a4a;
+}
+
+.button:active,
+.button:focus {
+    outline: none;
+}
+
+.button::-moz-focus-inner {
+    border: 0;
+}
+
+.pointer-button {
+    border-radius: 50%;
+    border-width: 5px;
+    font-size: 20px;
+    height: 70vmin;
+    left: 50%;
+    top: 45%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 70vmin;
+}
+
+.calibration-button {
+    border-radius: 15px;
+    border-width: 2px;
+    bottom: 40px;
+    height: 30px;
+    left: 10px;
+    line-height: 26px;
+    padding: 0 10px;
+}
+
+.debug-output {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px 10px;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+@media screen and (orientation: landscape) {
+    html {
+        height: 100vw;
+        left: 0;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        transform: rotateZ(-90deg);
+        transform-origin: left top;
+        width: 100vh;
+    }
+}

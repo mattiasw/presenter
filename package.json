@@ -1,10 +1,14 @@
 {
-  "name": "pointer",
+  "name": "presenter",
   "version": "0.1.0",
-  "description": "Use your mobile phone as a pointing device during web presentations.",
-  "main": "index.js",
+  "description": "Use your mobile phone as a presenter during web presentations.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "parcel build --experimental-scope-hoisting --public-url ./ --out-dir dist/app app/index.html",
+    "build:extension": "parcel build --experimental-scope-hoisting --out-dir dist/webextension/components webextension/components/receiver.js && node bin/build-extension.js",
+    "lint": "eslint .",
+    "start": "node index.js",
+    "test": "mocha --require @babel/register --recursive",
+    "watch": "parcel --https --out-dir dist/app app/index.html"
   },
   "keywords": [
     "mobile",
@@ -12,5 +16,40 @@
     "device"
   ],
   "author": "Mattias Wallander",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattiasw/presenter.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
+    "archiver": "^3.0.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.11.0",
+    "eslint-plugin-mocha": "^5.2.0",
+    "finalhandler": "^1.1.1",
+    "husky": "^1.2.1",
+    "mocha": "^5.2.0",
+    "parcel-bundler": "^1.11.0",
+    "pem": "^1.13.2",
+    "proxyquire": "^2.1.0",
+    "serve-static": "^1.13.2",
+    "sinon": "^7.2.2",
+    "sinon-chai": "^3.3.0"
+  },
+  "dependencies": {
+    "firebase": "^5.7.1",
+    "qrcode-generator": "^1.4.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test",
+      "pre-push": "npm run lint && npm test"
+    }
+  },
+  "browserslist": [
+    "last 1 Firefox version"
+  ]
 }

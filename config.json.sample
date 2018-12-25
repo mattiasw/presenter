@@ -1,0 +1,19 @@
+{
+    "debug": false,
+    "app-host": "192.168.0.10:1234",
+    "ice-servers": {
+        "iceServers": [
+            {
+                "urls": "stun:stun.example.com:3478"
+            }
+        ]
+    },
+    "firebase": {
+        "apiKey": "API_KEY",
+        "authDomain": "APP_ID.firebaseapp.com",
+        "databaseURL": "https://APP_ID.firebaseio.com",
+        "projectId": "APP_ID",
+        "storageBucket": "",
+        "messagingSenderId": "SENDER_ID"
+    }
+}

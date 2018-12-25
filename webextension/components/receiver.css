@@ -1,0 +1,40 @@
+.__web-presenter__dot {
+    background-color: #f00;
+    border-radius: 50%;
+    box-shadow: 0 0 4px 3px #f557;
+    display: none;
+    height: 15px;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translateX(var(--web-pointer-dot-left, 0)) translateY(var(--web-pointer-dot-top, 0));
+    transition: 50ms transform;
+    width: 15px;
+    z-index: 9999999;
+}
+
+.__web-presenter__dot--visible {
+    display: block;
+}
+
+.__web-presenter__qr {
+    background: #77777777;
+    bottom: 0;
+    display: none;
+    height: 160px;
+    position: fixed;
+    right: 0;
+    width: 160px;
+}
+
+.__web-presenter__qr--visible {
+    display: block;
+}
+
+.__web-presenter__qr svg {
+    height: 120px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 120px;
+}
